@@ -4,6 +4,12 @@ set -eo pipefail
 echo "--- Running pre-checkout hook"
 
 if [ -n "$BUILDKITE_PLUGIN_GIT_FLAGS_CLONE" ]; then
+  export BUILDKITE_GIT_MIRRORS_PATH="$BUILDKITE_PLUGIN_GIT_FLAGS_MIRRORS_PATH"
+  
+  echo "Set buildkite git mirror path to $BUILDKITE_PLUGIN_GIT_FLAGS_MIRRORS_PATH"
+fi
+
+if [ -n "$BUILDKITE_PLUGIN_GIT_FLAGS_CLONE" ]; then
   export BUILDKITE_GIT_CLONE_FLAGS="$BUILDKITE_PLUGIN_GIT_FLAGS_CLONE"
   
   echo "Set buildkite git clone flags to $BUILDKITE_PLUGIN_GIT_FLAGS_CLONE"
