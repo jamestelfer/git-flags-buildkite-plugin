@@ -6,6 +6,8 @@ configuration:
   properties:
     clone_flags:
       type: string
-    fetch_falgs:
+    fetch_flags:
+      type: string
+    mirrors_path:
       type: string
   required: []
